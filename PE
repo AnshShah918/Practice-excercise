@@ -1,0 +1,429 @@
+1.
+
+import java.util.Scanner;
+
+/**
+ * 
+ */
+
+/**
+ * @author ansh
+ *
+ */
+public class PalindromeCheck {
+
+	/**
+	 To write a new Program...
+	 */
+	String isPalindrome(String s) {
+		int num;
+		try {
+			num = Integer.parseInt(s);
+			
+		}catch(Exception e) {
+			return "Invalid Input";
+		}
+		int temp=num,rev=0;
+		while(temp!=0) {
+			int mod = temp%10;
+			rev = rev*10 + mod;
+			temp = temp/10;
+		}
+		if(num==rev) {
+			if(checkSum(num)) {
+				return "Palindrome. Sum greater than 25";
+			}else {
+				return "Palindrome. Sum not greater than 25";
+			}
+		}else {
+			return "Not a palindrome";
+		}
+		
+	}
+	
+	boolean checkSum(int num) {
+		int sum=0;
+		while(num!=0) {
+			int mod = num%10;
+			if(mod%2==0) {
+				sum+=mod;
+			}
+			num = num/10;
+		}
+		if(sum > 25) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+
+}
+
+
+=======================================================================+++++++================+++=======
+
+
+2.
+
+
+import java.util.Scanner;
+
+/**
+ * 
+ */
+
+/**
+ * @author ansh
+ *
+ */
+public class TomAndJerry {
+
+	/**
+	 To write a new Program...
+	 */
+	public String TomJerry(String a) {
+		int z = 0;
+        int x = Integer.parseInt(a);
+        if(((x%2)==0)&&((x>20)&&(x<30)))
+        {
+            z=1;
+        }
+        else if(((x%2)!=0)&&((x>20)&&(x<30)))
+        {
+            z=0;
+        }
+        else {
+            return"Enter number between 20 to 30";
+        }
+        if(z==1)
+        {
+            return("Jerry");
+        }
+        else
+        {
+            return("Tom");
+        }
+
+	}
+
+}
+
+
+============================================================================
+
+
+3.
+
+import java.util.Scanner;
+
+/**
+ * 
+ */
+
+/**
+ * @author ansh
+ *
+ */
+public class LetterCheck {
+
+	/**
+	 To write a new Program...
+	 */
+ArrayList<String> al=new ArrayList<String>();
+	public static void main(String[] args) {
+   	 Scanner sc=new Scanner(System.in);
+   	 LetterCheck cv=new LetterCheck();
+   	 String s=sc.next();
+   	 ArrayList<String>al=cv.checkVowelAndConsonant(s);
+   	 
+   	 for(int i=0;i<al.size();i++) {
+   		 System.out.println(al.get(i));
+   	 }
+   	 sc.close();
+    }
+		
+	public  ArrayList<String> checkVowelAndConsonant(String s) {
+		int l=s.length();
+		if(l<=0) {
+			al.add("Invalid Input");
+			return al;
+		}
+		for(int i=0;i<l;i++) {
+			char ch=s.charAt(i);
+			if((ch>=97 && ch<=122) || (ch>=65 && ch<=90)) {
+				switch(ch) {
+				case 'a':
+				case 'A':
+				case 'e':
+				case 'E':
+				case 'i':
+				case 'I':
+				case 'o':
+				case 'O':
+				case 'u':
+				case 'U':
+					al.add(ch+" is vowel");
+					break;
+				default:
+					al.add(ch+" is consonant");
+					
+				}
+			}else {
+				al.add("Not a letter");
+			}
+		}
+		return al;
+		}
+
+}
+
+====================================================================================
+
+4.
+
+
+import java.util.Scanner;
+
+/**
+ * 
+ */
+
+/**
+ * @author ansh
+ *
+ */
+public class NIteration {
+
+	/**
+	 To write a new Program...
+	 */
+	public String nIteration(int n) {
+		String str="";
+		for(int i =1;i<=n;i++) {
+			for(int j=1;j<=i;j++) {
+				str = str.concat(i+" ");
+			}
+		}
+		return str;
+	}
+
+
+}
+
+
+=================================================================================
+
+
+5.
+
+import java.util.Scanner;
+
+/**
+ * 
+ */
+
+/**
+ * @author ansh
+ *
+ */
+public class Addition {
+
+	/**
+	 To write a new Program...
+	 */
+	public int addArray(int[] arr) {
+		if(arr.length==0) {
+			return 500;
+		}
+		int sum=0;
+		for(int i=0;i<arr.length;i++) {
+			 sum+=arr[i];
+		}
+		System.out.println(sum);
+		return sum;
+	}
+
+}
+
+
+=====================================================================================
+
+
+6.
+
+
+import java.util.Scanner;
+
+/**
+ * 
+ */
+
+/**
+ * @author ansh
+ *
+ */
+public class CharacterCheck {
+
+	/**
+	 To write a new Program...
+	 */
+	public String checkCharacter(String s) {
+		if(s.length()>1 || s.length()<1) {
+			return "Invalid Input";
+		}
+		char ch = s.charAt(0);
+		if(ch >= 65 && ch<= 90) {
+			return "Capital Letter";
+		} else if(ch>=97 && ch<=122) {
+			return "Small Letter";
+		} else if(ch>=48 && ch<=57) {
+			return "Number";
+		} else {
+			return "Special Character";
+		}
+		
+	}
+
+}
+
+
+==================================================================
+
+
+7.
+
+
+import java.util.Scanner;
+
+/**
+ * 
+ */
+
+/**
+ * @author ansh
+ *
+ */
+public class Sort {
+
+	/**
+	 To write a new Program...
+	 */
+	   public ArrayList<Integer> sortNumber(int a) {
+	       ArrayList <Integer> arr = new ArrayList<Integer>();        
+	       
+	        while(a>0) {
+	            int r =a%10;
+	            a= a/10;
+	            arr.add(r);
+	        }
+	        Collections.sort(arr, Collections.reverseOrder());
+	        System.out.println(arr);
+	        return arr;
+	   }
+	    
+	    public int sumOfEven(int a) {
+	        int sum =0;
+	        while(a>0) {
+	            int r =a%10;
+	            a= a/10;
+	            sum += r%2==0? r:0;
+	        }
+	        System.out.println(sum);
+	        return sum;
+	    }
+
+}
+
+
+
+
+=====================================================================================
+
+
+
+8.
+
+import java.util.Scanner;
+
+public class GuessNumber {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter your guessed number(1-50): ");
+		int num= sc.nextInt();
+		GuessNumber gn = new GuessNumber();
+		int target = 20;
+		String str="";
+		do {
+			System.out.println(gn.guessNumber(num,target));
+			if(!(str.equals("Matches"))) {
+				System.out.println("Enter your guessed number(1-50): ");
+				num= sc.nextInt();
+			}
+		}while(!(str.equals("Matches")));
+		
+		sc.close();
+	}
+	
+	
+	
+	
+	public String guessNumber(int num , int target) {
+		 
+		 if (num > target)
+             return "Greater";
+         else if (num < target)
+             return "Less";
+         else
+             return "Matches";
+				
+	}
+}
+
+
+
+=====================================================================
+
+9.
+
+
+public class ReverseString {
+
+	public String reverseString(String str){
+
+		if(str.length()<1) {
+			return "Invalid Input";
+		}else if(str.length()==1) {
+			return str;
+		}
+		String rev = "";
+	    for (int i = str.length()-1; i>=0 ; i--) {
+	        char ch = str.charAt(i);
+	        rev+=ch;
+	        }
+	    return rev;
+	}
+}
+
+
+=========================================================================
+
+10.
+
+
+package com.stackroute.utility;
+
+public class RepeatString {
+	public String repeatString(String str, int n) {
+		if(str.length()==0|| str.length()<n) {
+			return "Invalid";
+		}
+		
+		String substr = str.substring(str.length()-n);
+	    for(int i =1; i<=n ;i++) {
+	        str = str.concat(substr);
+	    }
+	    return str;
+	}
+
+}

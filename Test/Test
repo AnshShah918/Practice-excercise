@@ -1,0 +1,547 @@
+1.
+
+
+package com.stackroute.utility;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.jupiter.api.Test;
+
+class PalindromeCheckTest {
+
+	@Test
+	void testIsPalindrome() {
+		   String expectedValue= "Palindrome. Sum greater than 25";
+	       PalindromeCheck pc=new PalindromeCheck();
+	       //Act
+	       String actualValue=pc.isPalindrome("24466442");
+	       //Assert
+	       assertEquals(expectedValue, actualValue);
+	    }
+
+	@Test
+	void testIsNotPalindrome() {
+		   String expectedValue= "Not a palindrome";
+	       PalindromeCheck pc=new PalindromeCheck();
+	       //Act
+	       String actualValue=pc.isPalindrome("1234");
+	       //Assert
+	       assertEquals(expectedValue, actualValue);
+	    }
+	
+	@Test
+	void testIsPalindromeSum() {
+		   String expectedValue= "Palindrome. Sum not greater than 25";
+	       PalindromeCheck pc=new PalindromeCheck();
+	       //Act
+	       String actualValue=pc.isPalindrome("123321");
+	       //Assert
+	       assertEquals(expectedValue, actualValue);
+	    }
+	
+	@Test
+	void testInvalidInput() {
+		   String expectedValue= "Invalid Input";
+	       PalindromeCheck pc=new PalindromeCheck();
+	       //Act
+	       String actualValue=pc.isPalindrome("123321ab");
+	       //Assert
+	       assertEquals(expectedValue, actualValue);
+	    }
+	@Test
+	void testNullInvalidInput() {
+		   String expectedValue= "Invalid Input";
+	       PalindromeCheck pc=new PalindromeCheck();
+	       //Act
+	       String actualValue=pc.isPalindrome("");
+	       //Assert
+	       assertEquals(expectedValue, actualValue);
+	    }
+	
+	
+	@Test
+	void testTestSumLess() {
+		   boolean expectedValue= false;
+	       PalindromeCheck pc=new PalindromeCheck();
+	       //Act
+	       boolean actualValue=pc.checkSum(12345);
+	       //Assert
+	       assertEquals(expectedValue, actualValue);
+	    }
+
+	@Test
+	void testTestSumGreater() {
+		   boolean expectedValue= true;
+	       PalindromeCheck pc=new PalindromeCheck();
+	       //Act
+	       boolean actualValue=pc.checkSum(2424848);
+	       //Assert
+	       assertEquals(expectedValue, actualValue);
+	    }
+	
+	
+		
+	}
+
+========================================================
+
+
+
+2.
+
+
+package com.stackroute.utility;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class TomAndJerryTest {
+
+	 	@Test
+	    public void TomJerrySuccessJerry(){
+	        //Arrange
+	        
+	        String expectedValue = "Jerry";
+	        TomAndJerry e = new TomAndJerry();
+	        String x="22";
+	        //Act
+	        String actualValue = e.TomJerry(x);
+	        
+	        //Assert
+	        assertEquals(expectedValue,actualValue);
+	        
+	    }
+	    
+	    @Test
+	    
+	    public void TomJerrySuccessTom(){
+	        //Arrange
+	        
+	        String expectedValue = "Tom";
+	        TomAndJerry e = new TomAndJerry();
+	        String x="23";
+	        
+	        //Act
+	        
+	        String actualValue = e.TomJerry(x);
+	        
+	        //Assert
+	        
+	        assertEquals(expectedValue,actualValue);
+	        
+	    }
+	    
+	    @Test
+	    
+	    public void TomJerryFailure(){
+	        //Arrange
+	        
+	        String expectedValue = "Enter number between 20 to 30";
+	        TomAndJerry e = new TomAndJerry();
+	        String x="19";
+	        
+	        //Act
+	        
+	        String actualValue = e.TomJerry(x);
+	        
+	        //Assert
+	        
+	        assertEquals(expectedValue,actualValue);
+	        
+	    }
+	    
+	    @Test
+	    
+	    public void TomJerryFailure2(){
+	        //Arrange
+	        String expectedValue = "Enter number between 20 to 30";
+	        TomAndJerry e = new TomAndJerry();
+	        String x="31";
+	        
+	        //Act
+	        String actualValue = e.TomJerry(x);
+	        
+	        //Assert
+	        assertEquals(expectedValue,actualValue);
+	        
+	    }
+}
+
+
+================================================
+
+
+
+3.
+
+
+package com.stackroute.utility;
+
+import static org.junit.Assert.assertEquals;
+
+import java.util.ArrayList;
+
+import org.junit.jupiter.api.Test;
+
+class LetterCheckTest {
+	@Test
+	public void checkVowelAndConsonantTest() {
+		/* Arrange */
+		LetterCheck cv=new LetterCheck();
+		/* Act */
+		ArrayList<String> actualList=cv.checkVowelAndConsonant("abhi");
+		ArrayList<String> expectedList=new ArrayList<String>();
+		expectedList.add("a is vowel");
+		expectedList.add("b is consonant");
+		expectedList.add("h is consonant");
+		expectedList.add("i is vowel");
+		/* Assert */
+		assertEquals(expectedList,actualList);
+	}
+}
+
+
+=======================================================
+
+
+4.
+
+
+package com.stackroute.utility;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class NIterationTest {
+
+	@Test
+	void testNIteration() {
+		String expectedValue = "1 2 2 3 3 3 ";
+		NIteration ni = new NIteration();
+		String actualValue = ni.nIteration(3);
+		
+		assertEquals(expectedValue,actualValue);
+		
+	}
+	
+	@Test
+	void testIteration() {
+		String expectedValue = "1 ";
+		NIteration ni = new NIteration();
+		String actualValue = ni.nIteration(1);
+		
+		assertEquals(expectedValue,actualValue);
+		
+	}
+	@Test
+	void testIterationFalse() {
+		String expectedValue = "122333";
+		NIteration ni = new NIteration();
+		String actualValue = ni.nIteration(3);
+		
+		assertNotEquals(expectedValue,actualValue);
+		
+	}
+
+}
+
+
+======================================================
+
+
+5.
+
+
+package com.stackroute.utility;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.jupiter.api.Test;
+
+class AdditionTest {
+
+	@Test
+	void testAddition() {
+		int expectedValue = 120;
+		Addition addition = new Addition();
+		int arr[]={10 , 20, 30, 40, 20};
+		int actualValue = addition.addArray(arr);
+		assertEquals(expectedValue,actualValue);
+				
+	}
+	@Test
+	void testInvalidAddition() {
+		int expectedValue = 500;
+		Addition addition = new Addition();
+		int arr[]= {};
+		int actualValue = addition.addArray(arr);
+		assertEquals(expectedValue,actualValue);
+				
+	}
+
+}
+
+
+=======================================================
+
+
+
+6.
+
+package com.stackroute.utility;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class CharacterCheckTest {
+
+		@Test
+		void testCheckInvalidInput() {
+			CharacterCheck cc = new CharacterCheck();
+			
+			/*Act*/
+			String result = cc.checkCharacter("");
+			
+			/*Assert*/
+			assertEquals("Invalid Input", result);
+		}
+		
+		@Test
+		void testCheckInvalidString() {
+			CharacterCheck cc = new CharacterCheck();
+			
+			/*Act*/
+			String result = cc.checkCharacter("aaa");
+			
+			/*Assert*/
+			assertEquals("Invalid Input", result);
+		}
+		
+		@Test
+		void testCheckCapital() {
+			CharacterCheck cc = new CharacterCheck();
+			
+			/*Act*/
+			String result = cc.checkCharacter("A");
+			
+			/*Assert*/
+			assertEquals("Capital Letter", result);
+		}
+		
+		@Test
+		void testCheckSmall() {
+			CharacterCheck cc = new CharacterCheck();
+			
+			/*Act*/
+			String result = cc.checkCharacter("a");
+			
+			/*Assert*/
+			assertEquals("Small Letter", result);
+		}
+		@Test
+		void testCheckNumber() {
+			CharacterCheck cc = new CharacterCheck();
+			
+			/*Act*/
+			String result = cc.checkCharacter("1");
+			
+			/*Assert*/
+			assertEquals("Number", result);
+		}
+		@Test
+		void testCheckSpecial() {
+			CharacterCheck cc = new CharacterCheck();
+			
+			/*Act*/
+			String result = cc.checkCharacter("@");
+			
+			/*Assert*/
+			assertEquals("Special Character", result);
+		}
+
+}
+
+
+====================================================
+
+
+7.
+
+package com.stackroute.utility;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.ArrayList;
+
+import org.junit.jupiter.api.Test;
+
+class SortTest {
+
+	Sort s = new Sort();
+    
+    @Test
+    public void testsortNumber() {
+        ArrayList <Integer> actual = new ArrayList<Integer>();  
+        actual = s.sortNumber(223);
+        ArrayList <Integer> expected = new ArrayList<Integer>(){{
+            add(3);
+            add(2);
+            add(2);
+        }};
+        assertTrue(actual.equals(expected));        
+    }
+    
+    @Test
+    public void testsumOfEven() {
+        int actual = s.sumOfEven(223);
+        assertEquals(4,actual);
+    }
+
+}
+
+
+=====================================================
+
+
+8.
+
+
+package com.stackroute.utility;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class GuessNumberTest {
+
+	    @Test
+	    
+	    public void guessNumberSuccess(){
+	        //Arrange
+	        
+	        String expectedValue = "Matches";
+	        GuessNumber gn = new GuessNumber();
+	        //Act
+	        String actualValue = gn.guessNumber(20,20);
+	        
+	        //Assert
+	        assertEquals(expectedValue,actualValue);
+	        
+	    }
+	    
+	    @Test
+	    
+	    public void guessNumberMore(){
+	        //Arrange
+	        String expectedValue ="Less";
+	        GuessNumber gn = new GuessNumber();
+	        
+	        //Act
+	        String actualValue = gn.guessNumber(20,40);
+	        
+	        //Assert
+	        assertEquals(expectedValue,actualValue);
+	        
+	    }
+	    
+	    @Test
+	    public void guessNumberLess(){
+	        //Arrange
+	        String expectedValue = "Greater";
+	        GuessNumber gn = new GuessNumber();
+	        
+	        //Act
+	        String actualValue = gn.guessNumber(20,19);
+	        
+	        //Assert
+	        assertEquals(expectedValue,actualValue);
+	        
+	    }
+}
+
+=======================================================
+
+9.
+
+
+package com.stackroute.utility;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.jupiter.api.Test;
+
+class ReverseStringTest {
+
+	@Test
+	void testReverseString() {
+		String expectedValue="narmis";
+		ReverseString rs = new ReverseString();
+		String actualValue = rs.reverseString("simran");
+		assertEquals(expectedValue,actualValue);
+	}
+
+	@Test
+	void testInvalidString() {
+		String expectedValue="Invalid Input";
+		ReverseString rs = new ReverseString();
+		String actualValue = rs.reverseString("");
+		assertEquals(expectedValue,actualValue);
+	}
+	@Test
+	void testValidString() {
+		String expectedValue="a";
+		ReverseString rs = new ReverseString();
+		String actualValue = rs.reverseString("a");
+		assertEquals(expectedValue,actualValue);
+	}
+
+}
+
+=====================================================
+
+10.
+
+package com.stackroute.utility;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.jupiter.api.Test;
+
+class RepeatStringTest {
+	@Test
+	void testRepeatString() {
+		String expectedValue="simranranranran";
+		RepeatString rs = new RepeatString();
+		String actualValue = rs.repeatString("simran", 3);
+		assertEquals(expectedValue,actualValue);
+	}
+
+	@Test
+	void testInvalidString() {
+
+		String expectedValue="Invalid";
+		RepeatString rs = new RepeatString();
+		String actualValue = rs.repeatString("", 3);
+		assertEquals(expectedValue,actualValue);
+		}
+	@Test
+	void testValidString() {
+		String expectedValue="Invalid";
+		RepeatString rs = new RepeatString();
+		String actualValue = rs.repeatString("simran", 8);
+		assertEquals(expectedValue,actualValue);
+		}
+	@Test
+	void testInvalidInputString() {
+		String expectedValue="Invalid";
+		RepeatString rs = new RepeatString();
+		String actualValue = rs.repeatString("s", 4);
+		assertEquals(expectedValue,actualValue);
+		}
+
+	
+}
